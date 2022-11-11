@@ -1,12 +1,11 @@
 import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
+import {productsReducer} from "components/reducers/products-reducer";
 
 const rootReducer = combineReducers({
-
+    products: productsReducer
 })
-
-export type RootReducerType = ReturnType<typeof rootReducer>
 
 export const store = configureStore({
     reducer: rootReducer,
@@ -15,3 +14,6 @@ export const store = configureStore({
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+
+// @ts-ignore
+window.store = store

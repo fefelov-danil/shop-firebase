@@ -1,0 +1,23 @@
+.product {
+  padding: 25px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.info {
+  margin-top: 15px;
+}
+.name {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.productPrice {
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  color: #555;
+}

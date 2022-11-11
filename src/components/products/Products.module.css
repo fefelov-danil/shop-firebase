@@ -1,0 +1,9 @@
+.products {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}

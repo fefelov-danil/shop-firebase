@@ -1,0 +1,8 @@
+.app {
+  padding: 40px 20px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.app h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
