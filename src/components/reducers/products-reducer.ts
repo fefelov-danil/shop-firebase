@@ -6,17 +6,15 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts',
         const productsCol = query(collection(payload, "products"), orderBy("productId", "asc"));
         const productsSnapshot = await getDocs(productsCol);
         const products = productsSnapshot.docs.map(doc => doc.data());
-        console.log(products)
-        return products as Array<productsType>
+        return products as Array<ProductType>
 })
 
-export const sliceProductsReducer = createSlice({
+const sliceProductsReducer = createSlice({
     name: 'products',
-    initialState: [] as Array<productsType>,
+    initialState: [] as Array<ProductType>,
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchProducts.fulfilled, (state, action) => {
-            console.log(action)
             return action.payload
         })
     }
@@ -24,7 +22,7 @@ export const sliceProductsReducer = createSlice({
 
 export const productsReducer = sliceProductsReducer.reducer
 
-type productsType = {
+export type ProductType = {
     productId: string
     productImg: string
     productName: string

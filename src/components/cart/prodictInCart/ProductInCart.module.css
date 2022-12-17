@@ -1,0 +1,47 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border-bottom: 1px solid #dedede;
+}
+.product img {
+  max-width: 70px;
+}
+.name {
+  width: calc(60% - 42px);
+  text-align: center;
+}
+.count {
+  width: calc(20% - 21px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count button {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #29323C;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+.count button:hover {
+  background: red;
+}
+.count span {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dedede;
+}
+.price {
+  width: calc(20% - 21px);
+  text-align: right;
+}

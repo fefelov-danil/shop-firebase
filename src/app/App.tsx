@@ -8,6 +8,11 @@ import {fetchProducts} from "components/reducers/products-reducer";
 import firebase from 'firebase/compat/app';
 import {getFirestore} from "firebase/firestore/lite";
 import {Products} from "components/products/Products";
+import {Header} from "components/header/Header";
+import {Cart} from "components/cart/Cart";
+import {Navigate, Route, Routes} from "react-router-dom";
+import {PageNotFound} from "components/404/PageNotFound";
+import {fetchProductsInCartLS} from "components/reducers/cart-reducer";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -30,10 +35,19 @@ export const App = () => {
     dispatch(fetchProducts(db))
   }, [])
 
+  useEffect(() => {
+    dispatch(fetchProductsInCartLS())
+  }, [])
+
   return (
     <div className={s.app}>
-
-      <Products/>
+      <Header/>
+      <Routes>
+        <Route path={'/'} element={<Products/>}/>
+        <Route path={'/cart'} element={<Cart/>}/>
+        <Route path={'/404'} element={<PageNotFound/>}/>
+        <Route path={'*'} element={<Navigate to={'/404'}/>}/>
+      </Routes>
     </div>
   );
 }

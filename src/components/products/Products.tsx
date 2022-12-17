@@ -11,6 +11,7 @@ export const Products = () => {
             return (
                 <Product
                     key={p.productId}
+                    productId={p.productId}
                     productName={p.productName}
                     productImg={p.productImg}
                     productPrice={p.productPrice}
@@ -21,9 +22,11 @@ export const Products = () => {
 
     return (
         <div className={s.products}>
-            <h1>Apple Watch</h1>
-            <div className={s.columns}>
-                {productComponents}
+            <div className="container">
+                <h1>Apple Watch</h1>
+                <div className={s.columns}>
+                    {productComponents}
+                </div>
             </div>
         </div>
     );
